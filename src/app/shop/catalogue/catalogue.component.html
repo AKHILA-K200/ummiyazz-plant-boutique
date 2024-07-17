@@ -1,0 +1,73 @@
+<div class="untree_co-section product-section before-footer-section">
+    <div class="container">
+          <!-- <div class="row" *ngFor="let ficus of imageSet"> -->
+
+              <!-- Start Column 1 -->
+            <!-- <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="#" *ngIf="ficus.name">
+                    <img [src]="ficus.name" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chaisr</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="assets/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div> 
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="#" *ngIf="ficus.name_two">
+                    <img [src]="ficus.name_two" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chaisr</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="assets/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div> 
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="#" *ngIf="ficus.name_three">
+                    <img [src]="ficus.name_three" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chaisr</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="assets/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div> 
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="#" *ngIf="ficus.name_four">
+                    <img [src]="ficus.name_four" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">Nordic Chaisr</h3>
+                    <strong class="product-price">$50.00</strong>
+
+                    <span class="icon-cross">
+                        <img src="assets/cross.svg" class="img-fluid">
+                    </span>
+                </a>
+            </div> 
+        </div> -->
+        <!-- Component HTML File (e.g., ficus-images.component.html) -->
+<div class="row">
+    <div class="col-12 col-md-4 col-lg-3 mb-5" *ngFor="let ficus of imageSet; let i=index">
+      <div class="product-item"  >
+        <img [src]="ficus.imagePath" class="img-fluid product-thumbnail">
+        <h3 class="product-title">{{ ficus.name }}</h3>
+        <strong class="product-price">₹{{ ficus.price }}</strong>
+        <span class="icon-cross">
+          <img src="assets/cross.svg" class="img-fluid" (click)="setIndex(i)">
+        </span>
+      </div>
+      <div class="mt-2">
+    
+        <button class="btn btn-primary btn-block mb-2" *ngIf="selectedIndex == i" (click)="addToCart(ficus, i)"><i class="bi bi-cart-check"></i>  Add to Cart</button>
+        <button class="btn btn-success btn-block" *ngIf="selectedIndex == i" (click)="buyNow(ficus, i)"><i class="bi bi-bag-check"></i>  Buy Now</button>
+      </div>
+    </div>
+  </div>
+  
+    </div>
+</div>
+
+<p-toast />
